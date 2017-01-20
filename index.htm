@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>LoRaSwitch by P. Sachet &amp; F. Weens</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+	<link rel="apple-touch-icon" href="apple-touch-icon-iphone.png" />
+	<link rel="stylesheet" type="text/css" href="dashboard.css">
+	<script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
+	<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+	<script src="dashboard.js"></script>
+	<script>
+		startLoraswitch();
+		console.log( "ready!" );
+	</script>
+</head>
+<div data-role="page">
+	<div data-role="header"><h1><div>LoRaSwitch by P. Sachet &amp; F. Weens</div></h1></div><!-- /header -->
+
+	<div role="main" class="ui-content">
+		<div data-role="header">
+			<h1 style="text-align:left; margin-left:2%;">UPLINK</h1>
+		</div>
+		<div id="upStatus" class="ui-body">
+			<img style="height:32px; margin:1%;" class="ui-btn-left" id="upIcon"/>
+			<table id="upStatusData" class="ui-body" style="margin-left:3%;">
+				<tr><th style="padding-left:1%;width:5%;text-align:left;" id="upStatusLastUpdateHeader"/><td style="padding-left:1%;width:30%;" id="upStatusLastUpdateContent"></td></tr>
+				<tr><th style="padding-left:1%;width:5%;text-align:left;" id="upStatusBatteryHeader"/><td style="padding-left:1%;width:15%;" id="upStatusBatteryContent"></td></tr>
+				<tr><th style="padding-left:1%;width:5%;text-align:left;" id="upStatusSignalHeader"/><td style="padding-left:1%;width:15%;" id="upStatusLastSignalContent"></td></tr>
+			</table>
+		</div>
+
+		<div data-role="header">
+			<h1 style="text-align:left; margin-left:2%;">DOWNLINK</h1>
+		</div>
+		<form class="ui-body">
+			<div class="ui-field-contain no-field-separator">
+			<label for="flip" style="width:100%">Switch</label>
+			<select name="flip" id="flip" data-role="flipswitch"><option value="off">OFF</option><option value="on">ON</option></select>
+			</div>
+		</form>
+		<div id="switchStatus" class="ui-body no-field-separator"></div>
+
+		<div id="downStatus" style="display: none;">
+			<h3 class="ui-bar ui-bar-a">Status</h3>
+			<div id="content" class="ui-body"></div>
+		</div>
+	</div>
+
+	<div data-role="footer">
+		<h4>2017 - LoRaSwitch Team + 3ème Lieu</h4>
+	</div><!-- /footer -->
+</div><!-- /page -->
+</body>
+</html>

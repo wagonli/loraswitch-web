@@ -1,0 +1,8 @@
+.ui-header .ui-title { margin-left:10%; margin-right:10%; }
+.ui-footer .ui-title { margin-left:10%; margin-right:10%; }
+.ui-header .ui-title { margin-left:10%; margin-right:10%; }
+.ui-field-contain { margin:0px; padding:2px; }
+.ui-hide-label.ui-br, .no-field-separator { border-bottom-width: 0; }
+.slider input { display: none; }
+.redText { color: red; font-weight: bold; }
+.greenText { color: green; font-weight: bold; }
