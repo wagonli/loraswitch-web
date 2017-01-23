@@ -1,4 +1,6 @@
+var serviceUri="http://loraswitch.orange-labs.fr";
 var requestNumber=0;
+
 function startLoraswitch() { 
     $(document).ajaxStart(function() { if(requestNumber == 0) { $.mobile.loading("show", { textVisible: true }); disableControls(); }; requestNumber++; });
     $(document).ajaxStop(function() { requestNumber--; if(requestNumber == 0) { $.mobile.loading('hide'); enableControls(); } });
@@ -19,12 +21,12 @@ function updateSwitch()	{
 //		alert("updateSwitch");
     var flipId = this.id == "flip" ? "FLIP" : "UNKNOWN";
     var flipValue = this.value == "on" ? "1" : "0";
-    var url="http://loraswitch.kmt.orange-labs.fr/switch/" + flipValue;
+    var url=serviceUri + "/switch/" + flipValue;
     ajaxRequest(url, "PUT", onSwitchUpdateSuccess, "Switch Update ERROR.");
 }
 
 function getSwitch() {
-    ajaxRequest("http://loraswitch.kmt.orange-labs.fr/power/status", "GET", onSwitchGetSuccess, "Switch Get Status ERROR.");
+    ajaxRequest(serviceUri + "/power/status", "GET", onSwitchGetSuccess, "Switch Get Status ERROR.");
 }
 
 function ajaxRequest(requestedUrl, requestType, successFunc, message) {
