@@ -1,0 +1,6 @@
+version : '2.1'
+services:
+  ls-web:
+    image: loraswitch-web
+    ports:
+      - "9090:80"
